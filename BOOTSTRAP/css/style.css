@@ -1,0 +1,134 @@
+/* color codes */
+/* logo color 1: #3b0819 */
+/* logo color 2: #de2868 */
+
+.my-btnColor{
+	background-color: #3b0819;
+}
+.my-headingColor{
+	color: #de2868;
+}
+.about-color{
+	background-color:#de2868 ;
+}
+
+/* fonts */
+
+div, span, a, h1, h2, h3, h4, h5, p{
+	font-family:'Quicksand', sans-serif;
+}
+
+/* body styles */
+span{
+	color: #3b0819;
+}
+
+div.banner{
+	background-color:lightgrey;
+}
+.my-space{
+	margin-top: 100px;
+	margin-bottom: 70px;
+}
+div.my-card1{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/bag1.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 45px;
+}
+/* product 1 */
+div.my-card2{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/newbag.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* product 2 */
+div.my-card3{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/handbag.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* product 3 */
+
+div.my-card4{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/lip1.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 45px;
+}
+/* product 4 */
+div.my-card5{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/lip2.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* product 5 */
+div.my-card6{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/lip3.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* product 6 */
+
+
+div.my-card7{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/special.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin-left: 45px;
+}
+/* product 7 */
+div.my-card8{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/babyboy.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* product 8 */
+div.my-card9{
+	width: 300px;
+	height: 200px;
+	background-image: url(../../images/beret.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+/* product 9 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media screen and (min-width: 480px) and (min-width: 768px){
+	.bigDisplay{
+		display: none;;
+	}
+	.smallDisplay{
+		display: block;
+	}
+}
