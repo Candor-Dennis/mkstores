@@ -123,12 +123,3 @@ div.my-card9{
 
 
 
-/* media queries */
-@media screen and (min-width: 480px) and (min-width: 768px){
-	.bigDisplay{
-		display: none;;
-	}
-	.smallDisplay{
-		display: block;
-	}
-}
