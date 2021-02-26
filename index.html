@@ -11,7 +11,7 @@
 
     <title>MK Stores Homepage</title>
 </head>
-<body>
+<body onload="hideMe()">
 
     <!-- navbar -->
 
@@ -40,7 +40,7 @@
                 </div>
               </li>
               <li class="nav-item mr-sm-2">
-                <span><i class="fa fa-shopping-cart mt-sm-2"></i></span>
+                <a href="#" onclick="showItem()"><span><i class="fa fa-shopping-cart mt-sm-2"></i></span></a>
             </li>
             
           </ul>
@@ -71,6 +71,81 @@
               </div>
           </div>
       </div>
+
+
+  <!-- hidden checkout section -->
+
+      <div id="checkout" class="my-space">
+          <div class="container" >
+              <div class="row bg-secondary  text-white p-3">
+                  <div class="col-sm-6 col-md-6 col-lg-6">  
+                      <div>
+                          <h3 class="text-center">Thank You For Your Patronage.. Proceed to checkout</h3>
+                      </div>
+                      <div>
+                        <table class="table mt-5">
+                          <thead>
+                            <tr class="text-white">
+                              <th scope="col">#</th>
+                              <th scope="col">Items Bought</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Quantity</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>Mark</td>
+                              <td>Otto</td>
+                              <td>@mdo</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td>Jacob</td>
+                              <td>Thornton</td>
+                              <td>@fat</td>
+                            </tr>
+                            <tr>
+                              <th scope="row">3</th>
+                              <td>Larry</td>
+                              <td>the Bird</td>
+                              <td>@twitter</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div>
+                          <h4>Total Price: <span id="totalPrice">...</span></h4>
+                          <h4>Total Quantity: <span id="totalQuantity">...</span></h4>
+                        </div>
+                        <div id="bill" class="mt-5 ">
+                          <h4>Enter Billing Address</h4>
+                          <form>
+                            <div class="form-group">
+                              <label>Full Name</label>
+                              <input type="text" class="form-control" id="checkoutName" >
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Enter Address</label>
+                              <textarea name="" id="checkoutAddress" cols="3" rows=3 class="form-control"></textarea>
+                            </div>
+                            <div class="text-center">
+                              <button type="button" class="btn my-btnColor text-white">Proceed to payment</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                    <h3>PAYPAL  HERE</h3>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
+
 
       <!-- products collection -->
 
@@ -192,10 +267,6 @@
       </div>
 
 
-     
-
-
-
       <!-- about section -->
 
       <div class="container mt-4 mb-5">
@@ -308,6 +379,7 @@
 <script src="BOOTSTRAP/js/popper.js"></script>
 <script src="BOOTSTRAP/js/bootstrap.jquery.js"></script>
 <script src="BOOTSTRAP/js/bootstrap.js"></script>
+<script src="js/index.js"></script>
 
 
 
