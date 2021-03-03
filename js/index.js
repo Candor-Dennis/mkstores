@@ -49,6 +49,7 @@ const paymentForm = document.getElementById('paymentForm');
             document.getElementById("banner").style.display = 'none';
             document.getElementById("hide").style.display = 'none';
             document.getElementById("hide-all").style.display = 'none'
+            
         } else {
             console.log("i cannot hide") 
         };
@@ -68,11 +69,12 @@ const paymentForm = document.getElementById('paymentForm');
             let quantContainer = document.getElementById("totalQuantity");
             quantContainer.innerHTML = totalQuantity;
         }
+        let amt = document.getElementById('totalPrice').innerHTML;
+        document.getElementById('amount').value= amt;
         
         for (const item of allItems) {
             
             let container = document.createElement("p");
-            // container.style.border = "1px solid maroon"
             container.style.margin = "10px"
             container.style.padding = "10px"
             let productContent = document.createTextNode(`
@@ -82,7 +84,7 @@ const paymentForm = document.getElementById('paymentForm');
             var display = document.getElementById("content");
             display.appendChild(container);
       
-            return;
+            // return;
          }
 
     }
@@ -102,6 +104,8 @@ const paymentForm = document.getElementById('paymentForm');
         const Fname =document.getElementById("checkoutFname").value;
         const Lname =document.getElementById("checkoutLname").value;
         const address = document.getElementById("checkoutAddress").value;
+        let payAmount = document.getElementById("totalPrice").value;
+        
 
         let nameCheck = /^[a-zA-Z\s]+$/;
         let addressCheck = /^[a-zA-Z0-9\s]+$/;
@@ -120,28 +124,29 @@ const paymentForm = document.getElementById('paymentForm');
             errorMessage.innerHTML = 'Please enter a valid address';
         } else {
                 errorMessage.classList.add('d-none');
+              
         }
+        
         // form validation
 
         e.preventDefault();
         let handler = PaystackPop.setup({
-        key: 'pk_test_xxxxxxxxxx', // Replace with your public key
+        key: 'pk_test_497490a227829f25ca921ff587dbb7a0a36fb392',
         email: document.getElementById("email-address").value,
-        amount: document.getElementById("amount").value * 100,
-        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
-
-        // label: "Optional string that replaces customer email"
+        amount: payAmount * 100,
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), 
 
         onClose: function(){
-        alert('Window closed.');
+        alert('Transction Failed');
             },
             callback: function(response){
             let message = 'Payment complete! Reference: ' + response.reference;
-            alert(message);
+            alert("Thank you for Patronising us");
+            window.location = "";
             }
 
         });
-
+        userForm.reset();
         handler.openIframe();
 
         }
