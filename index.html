@@ -83,47 +83,58 @@
       <div id="checkout" class="my-space" style="display: none;">
           <div class="container">
               <div class="row bg-secondary  text-white p-3">
-                  <div class="col-sm-6 col-md-6 col-lg-6">  
+                  <div class="col-sm-6 col-md-6 col-lg-6 p-5">  
                       <div>
-                          <h5 class="text-center mb-5">Thank You For Your Patronage.. Proceed to checkout</h5>
+                          <h4 class="text-center mb-5">Thank You For Your Patronage..</h4>
                       </div>
                       <div>
                         <div id="content"></div>
                         <div>
-                          <h6>Total Price Of Goods Selected : <span id="totalPrice">...</span></h6>
-                          <h6>Total Quantity of Goods Selected: <span id="totalQuantity">...</span></h6>
-                        </div>
-                        <div id="bill" class="mt-5 ">
-                          <h4>Enter Billing Address</h4>
-                          <form>
-                            <div class="form-group">
-                              <label>Full Name</label>
-                              <input type="text" class="form-control" id="checkoutName" >
-                            </div>
-                            <div class="form-group">
-                              <label for="exampleInputPassword1">Enter Address</label>
-                              <textarea name="" id="checkoutAddress" cols="3" rows=3 class="form-control"></textarea>
-                            </div>
-                            <div class="text-center">
-                              <button type="button" class="btn my-btnColor text-white">Proceed to payment</button>
-                            </div>
-                          </form>
+                          <h4>Total Price Of Goods Selected : <span id="totalPrice">...</span></h4>
+                          <h4>Total Quantity of Goods Selected: <span id="totalQuantity">...</span></h4>
                         </div>
                       </div>
                   </div>
                   <div class="col-sm-6 col-md-6 col-lg-6 text-center">
-                    <h3>PAYPAL  HERE</h3>
+                    <form id="paymentForm" class="">
+                      <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email-address" class="form-control" required />
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="tel" id="amount" class="form-control" required />
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" class="form-control" id="checkoutFname" />
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" class="form-control" id="checkoutLname" />
+                      </div>
+                      <div class="form-group">
+                        <label for="home address">Enter Address</label>
+                        <textarea name="" id="checkoutAddress" cols="3" rows=3 class="form-control"></textarea>
+                      </div>
+                      <div class="alert alert-danger d-none" id="error"></div>
+                      <div class="form-submit">
+                        <button type="submit" class="btn my-btnColor text-white" onclick="payWithPaystack()"> Proceed to payment</button>
+                      </div>
+                    
+                    </form>
                   </div>
               </div>
           </div>
       </div>
 
 
+      <div id="hide-all">
 
-
-
-
-      <!-- products collection -->
+         <!-- products collection -->
 
       <div id="products" class="mt-4 mb-5">
          
@@ -310,7 +321,14 @@
         </div>
           <!-- third collection --> 
       </div>
- 
+      
+
+
+      </div>
+
+
+     
+      <!-- footer -->
       <footer class="p-1 about-color mb-0">
 
         <div class="container">
@@ -328,49 +346,9 @@
         </div>
       </footer>
 
-      <form id="paymentForm" class="d-none">
-
-        <div class="form-group">
+     
       
-          <label for="email">Email Address</label>
       
-          <input type="email" id="email-address" required />
-      
-        </div>
-      
-        <div class="form-group">
-      
-          <label for="amount">Amount</label>
-      
-          <input type="tel" id="amount" required />
-      
-        </div>
-      
-        <div class="form-group">
-      
-          <label for="first-name">First Name</label>
-      
-          <input type="text" id="first-name" />
-      
-        </div>
-      
-        <div class="form-group">
-      
-          <label for="last-name">Last Name</label>
-      
-          <input type="text" id="last-name" />
-      
-        </div>
-      
-        <div class="form-submit">
-      
-          <button type="submit" onclick="payWithPaystack()"> Pay </button>
-      
-        </div>
-      
-      </form>
-      
-      <script src="https://js.paystack.co/v1/inline.js"></script>
 
 
 
@@ -401,6 +379,7 @@
 <script src="BOOTSTRAP/js/bootstrap.js"></script>
    
 <script src="js/index.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
 
 
 
