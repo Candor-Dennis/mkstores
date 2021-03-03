@@ -30,15 +30,10 @@ let totalQuantity = 0;
                     quantity : +allItems[i].quantity + 1
                 };
                 allItems[i] = productData;
-                let productInfo = document.getElementById("content");
-                productInfo.innerHTML =
-                        `<div class = "d-flex justify-content-around> 
-                            <div class ="flex-item"> ${productData.name} </div>
-                            <div class ="flex-item"> ${data.price} </div>
-                            <div class ="flex-item"> ${data.quantity} </div>
-                      </div>    `
                 return;
+               
             }
+            
         }
 
         allItems.push(data);
@@ -56,6 +51,7 @@ let totalQuantity = 0;
             console.log("i cannot hide") 
         };
 
+        
         for ( let i = 0 ;  i < allItems.length ; i++) {
 
             totalPrice +=  +allItems[i].price
@@ -64,15 +60,73 @@ let totalQuantity = 0;
             // to display price
             let priceContainer = document.getElementById("totalPrice");
             priceContainer.innerHTML = totalPrice;
+            
 
             // to display quantity
             let quantContainer = document.getElementById("totalQuantity");
             quantContainer.innerHTML = totalQuantity;
-
-            return;
         }
+        
+        for (const item of allItems) {
+            
+            let container = document.createElement("div");
+            container.style.border = "1px solid maroon"
+            container.style.margin = "10px"
+            let productContent = document.createTextNode(`
+               Product Name:${item.name}, Product Price:${item.price}, Product Quantity: ${item.quantity} 
+            `);
+            container.appendChild(productContent);
+            var display = document.getElementById("content");
+            display.appendChild(container);
+      
+            return;
+         }
+
+        
+
       
     }
 
+    const paymentForm = document.getElementById('paymentForm');
 
+    paymentForm.addEventListener("submit", payWithPaystack, false);
 
+    function payWithPaystack(e) {
+
+        e.preventDefault();
+
+        let handler = PaystackPop.setup({
+
+        key: 'pk_test_xxxxxxxxxx', // Replace with your public key
+
+        email: document.getElementById("email-address").value,
+
+        amount: document.getElementById("amount").value * 100,
+
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+
+        // label: "Optional string that replaces customer email"
+
+        onClose: function(){
+
+        alert('Window closed.');
+
+            },
+
+            callback: function(response){
+
+            let message = 'Payment complete! Reference: ' + response.reference;
+
+        
+
+            alert(message);
+
+            }
+
+        });
+
+        handler.openIframe();
+
+        }
+
+  
