@@ -124,8 +124,7 @@ const paymentForm = document.getElementById('paymentForm');
             errorMessage.innerHTML = 'Please enter a valid address';
         } else {
                 errorMessage.classList.add('d-none');
-            //     let amount = parseInt(payAmount) * 100
-            //   alert(amount)
+           
         
         
         // form validation
