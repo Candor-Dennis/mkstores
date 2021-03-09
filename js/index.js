@@ -124,8 +124,9 @@ const paymentForm = document.getElementById('paymentForm');
             errorMessage.innerHTML = 'Please enter a valid address';
         } else {
                 errorMessage.classList.add('d-none');
-              
-        }
+            //     let amount = parseInt(payAmount) * 100
+            //   alert(amount)
+        
         
         // form validation
 
@@ -133,7 +134,7 @@ const paymentForm = document.getElementById('paymentForm');
         let handler = PaystackPop.setup({
         key: 'pk_test_497490a227829f25ca921ff587dbb7a0a36fb392',
         email: document.getElementById("email-address").value,
-        amount: payAmount * 100,
+        amount: document.getElementById("amount").value * 100 ,
         ref: ''+Math.floor((Math.random() * 1000000000) + 1), 
 
         onClose: function(){
@@ -150,5 +151,31 @@ const paymentForm = document.getElementById('paymentForm');
         handler.openIframe();
 
         }
+    }
 
   
+
+
+
+
+
+
+
+
+
+
+
+
+  function payStaff(){
+    let info = document.getElementById("paymentGateway");
+    let action =  info.classList.remove('d-none');
+    let danger = document.getElementById("danger").style.display = 'none';
+    let success = document.getElementById("success").style.display = 'none';
+
+    
+    if (action = true) {
+        document.getElementById("allItems").style.display = 'none';
+    }
+   
+
+}
